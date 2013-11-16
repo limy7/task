@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<newTask:NewTaskNc xmlns:fx="http://ns.adobe.com/mxml/2009"
+				   xmlns:s="library://ns.adobe.com/flex/spark"
+				   xmlns:mx="library://ns.adobe.com/flex/mx"
+				   xmlns:newTask="view.newTask.*"
+				   xmlns:controls="controls.*"
+				   fontFamily="微软雅黑" fontSize="12"
+				   width="282" height="300" >
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayList;
+			import mx.events.FlexEvent;
+		
+			
+			
+			
+			
+			
+			
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<s:List id="taskList" x="1" y="1" width="182" height="269" borderVisible="true"
+			dataProvider="{newTaskAl}" doubleClick="removeTaskItem(event)"
+			itemRenderer="view.newTask.NewTaskItemRenderer"></s:List>
+	<s:Button id="addBtn" x="202" y="1" width="50" height="23" label="添加" click="addBtn_clickHandler(event)"/>
+	<s:Button id="saveBtn" x="202" y="32" width="50" height="23" label="保存" click="saveBtn_clickHandler(event)"/>
+	
+	
+</newTask:NewTaskNc>

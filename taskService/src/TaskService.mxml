@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   xmlns:newTask="view.newTask.*"
+					   xmlns:readTask="view.readTask.*"
+					   width="653" height="370" fontFamily="微软雅黑" showStatusBar="false">
+	<fx:Style source="styles.css" />
+	
+	<fx:Script>
+		<![CDATA[
+			import view.newTask.NewTaskNc;
+			protected function navigatorcontent1_clickHandler(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				trace(1111)
+				
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	<s:TabBar x="10" y="16" dataProvider="{testVS}" />
+	<mx:ViewStack id="testVS" x="9" y="38" width="613" height="324" borderColor="#020202"
+				  dropShadowVisible="true">		
+		<newTask:NewTaskNcView width="100%" height="100%" label="新建">			
+		</newTask:NewTaskNcView>
+		<readTask:ReadTaskView width="100%" height="100%" label="读取">
+		</readTask:ReadTaskView>
+		
+	</mx:ViewStack>
+	
+</s:WindowedApplication>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<readTask:ReadTaskNc xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					 xmlns:s="library://ns.adobe.com/flex/spark" 
+					 xmlns:mx="library://ns.adobe.com/flex/mx" 
+					 xmlns:readTask="view.readTask.*" 
+					 fontFamily="微软雅黑" fontSize="12"
+					 width="400" height="300">
+	
+	<fx:Script>
+		<![CDATA[
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<s:Label x="10" y="10" width="61" height="23" text="文件路径：" verticalAlign="middle"/>
+	<s:TextInput id="pathIT" x="79" y="10" width="179"/>
+	<s:Button x="268" y="11" label="浏览" click="scan_clickHandler(event)"/>
+</readTask:ReadTaskNc>
