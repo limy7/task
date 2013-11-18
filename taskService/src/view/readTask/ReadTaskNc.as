@@ -30,13 +30,13 @@ package view.readTask
 		[Bindable]
 		public var readTaskAl:ArrayList;
 		/**任务列表*/
-		public var readTaskList:List = new List();		
+		public var readTaskList:List;		
 		/**路径文本*/
 		public var pathIT:TextInput;
 		/**类别文本*/
 		public var titleText:Label;
 		/**保存按钮*/
-		public var saveBtn:Button = new Button();
+		public var saveBtn:Button;
 		
 		private var _xml:XML;
 		private var _taskArr:Array;
@@ -52,20 +52,15 @@ package view.readTask
 		{
 			//此处监听
 			readTaskList.addEventListener(TextAreaChangedEvent.TEXT_CHANGED, listChanged);
-			readTaskList.addEventListener("testE", test);
 			init();
 		}
 		
-		private function test(event:Event):void
-		{
-			trace(event.target);
-		}
-		
+	
 		/**列表有变*/
 		private function listChanged(event:TextAreaChangedEvent):void
 		{
 			_isChanged = true;
-			saveBtn.label = "保存*"
+			saveBtn.label = "*保存";
 		}
 		
 		private function init():void

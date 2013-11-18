@@ -20,7 +20,7 @@ package view.newTask
 	 */	
 	public class NewTaskNc extends NavigatorContent
 	{
-		public var taskList:List = new List();
+		public var taskList:List;
 		[Bindable]
 		public var newTaskAl:ArrayList = new ArrayList();;
 		public var readOnlyArr:Array;
@@ -34,7 +34,6 @@ package view.newTask
 		
 		protected function creationCompleteHandler(event:FlexEvent):void
 		{
-			// TODO Auto-generated method stub
 			init();
 			
 		}

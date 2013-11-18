@@ -4,6 +4,7 @@
 					 xmlns:mx="library://ns.adobe.com/flex/mx" 
 					 xmlns:readTask="view.readTask.*" 
 					 fontFamily="微软雅黑" fontSize="12"
+					 creationPolicy="all"
 					 creationComplete="creationCompleteHandler(event)"
 					 width="362" height="328">
 	
