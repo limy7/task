@@ -8,13 +8,8 @@
 	
 	<fx:Script>
 		<![CDATA[
-			import view.newTask.NewTaskNc;
-			protected function navigatorcontent1_clickHandler(event:MouseEvent):void
-			{
-				// TODO Auto-generated method stub
-				trace(1111)
-				
-			}
+			
+		
 		]]>
 	</fx:Script>
 	

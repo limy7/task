@@ -74,9 +74,9 @@ package view.newTask
 			for(var i:int=0; i<taskList.dataProvider.length; i++)
 			{
 				var item:TaskItemRenderer = taskList.dataGroup.getChildAt(i) as TaskItemRenderer;
-				readOnlyArr[i] = item.taskNameText.text;
+				readOnlyArr[i].name = item.taskNameText.text;
 			}
-			var str:String = XMLUtil.toXML(readOnlyArr);
+			var str:String = XMLUtil.toXMLString(readOnlyArr);
 			
 			
 			var file:File = new File(File.applicationDirectory.nativePath);

@@ -39,7 +39,7 @@ package view.readTask
 		public var saveBtn:Button;
 		
 		private var _xml:XML;
-		private var _taskArr:Array;
+		private var _taskArr:Array; //全部数据
 		private var _curIndex:int;//当前类别索引
 		private var _isChanged:Boolean; //列表数据是否有变
 		
@@ -63,6 +63,7 @@ package view.readTask
 			saveBtn.label = "*保存";
 		}
 		
+		/**初始化*/
 		private function init():void
 		{
 			_curIndex = 0;
@@ -131,7 +132,11 @@ package view.readTask
 		protected function saveBtn_clickHandler(event:MouseEvent):void
 		{
 			_isChanged = false;
-			saveBtn.label = "保存";
+			saveBtn.label = "保存";			
+			
+			var str:String = XMLUtil.toXMLString(readTaskAl.source, false, _curIndex);
+//			_xml.map[_curIndex] = str;
+			
 		}
 		
 		
