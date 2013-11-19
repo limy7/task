@@ -18,11 +18,9 @@ package utils
 		 */		
 		public static function toXMLString(value:Array,isNew:Boolean=true,titleID:int=0):String
 		{
-			var xml:XML = new XML();
-//			if(isNew) //新建一个任务xml
-//			{				
-			xml=<config></config>;
-//			}
+			var xml:XML;
+		
+			isNew ? xml = <config></config> : xml = <map></map>;
 			
 			var title:String = "";
 			switch(titleID)
@@ -32,12 +30,18 @@ package utils
 				case 2: title = "提交测试"; break;
 				case 3: title = "测试完成"; break;
 			}
-		 
-			xml.appendChild(<map title={title}/>);
 			
+			isNew ? xml.appendChild(<map title={title}/>) : xml.@title = title;
+	
 			for each(var item:Object in value)
 			{
-				xml.map.appendChild(<item name={item.name} />);
+				if(isNew)
+				{
+					xml.map.appendChild(<item name={item.name} />);
+				}else{
+					xml.appendChild(<item name={item.name} />);
+				}
+				
 			}
 			
 			var str:String = "";
@@ -66,12 +70,12 @@ package utils
 			for each(var map:XML in xml.*)
 			{
 				var obj:Object = {};
-				obj.title = map.@title;
+				obj.title = map.@title.toXMLString();
 				obj.data = [];
 			
 				for each(var item:XML in map.*)
 				{
-					obj.data.push({name : item.@name});
+					obj.data.push({name : (item.@name).toXMLString()});
 				}
 				
 				arr.push(obj);

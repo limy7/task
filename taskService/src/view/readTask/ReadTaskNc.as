@@ -135,8 +135,8 @@ package view.readTask
 			saveBtn.label = "保存";			
 			
 			var str:String = XMLUtil.toXMLString(readTaskAl.source, false, _curIndex);
-//			_xml.map[_curIndex] = str;
-			
+			_xml.map[_curIndex] = new XML(str);
+//			var xx:XML = 
 		}
 		
 		
